@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     server
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _receive_move_from_player, symObjAddr: 0x0, symBinAddr: 0x100003848, symSize: 0x140 }
+  - { offsetInCU: 0x87, offset: 0x87, size: 0x8, addend: 0x0, symName: _receive_move_from_player, symObjAddr: 0x0, symBinAddr: 0x100003848, symSize: 0x140 }
+  - { offsetInCU: 0xBD, offset: 0xBD, size: 0x8, addend: 0x0, symName: __OSSwapInt16, symObjAddr: 0x140, symBinAddr: 0x100003988, symSize: 0x24 }
+  - { offsetInCU: 0xE5, offset: 0xE5, size: 0x8, addend: 0x0, symName: _send_move_to_player, symObjAddr: 0x164, symBinAddr: 0x1000039AC, symSize: 0x134 }
+  - { offsetInCU: 0x117, offset: 0x117, size: 0x8, addend: 0x0, symName: _handle_game, symObjAddr: 0x298, symBinAddr: 0x100003AE0, symSize: 0x118 }
+  - { offsetInCU: 0x181, offset: 0x181, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x3B0, symBinAddr: 0x100003BF8, symSize: 0x258 }
+...
