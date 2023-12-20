@@ -10,3 +10,9 @@ The application was developed in Python (client side) and C (server side). The p
 - Graphical User Interface built with the ```Pygame``` library
 
  <Human versus Computer>
+
+ ## Video sample
+
+ <p align="center">
+  <img src="https://github.com/VladutPasare/Obstruction/blob/main/recording.gif" height="500""/>
+ </p>
