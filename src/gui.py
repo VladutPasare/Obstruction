@@ -101,7 +101,7 @@ class GUI:
                                     self.__score += 1
 
     def multiplayer_mode(self):
-        client = Client(5240)
+        client = Client(5261)
         turn = client.turn
         game_over = 0
 
