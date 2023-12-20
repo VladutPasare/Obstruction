@@ -54,37 +54,38 @@ class GUI:
         random_strategy = RandomStrategy(self.__board, Cell.O)
         computer = 0
         player = 1
-        turn = computer
-        game_over = False
+        turn = player
 
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
 
-                self.__display_score()
-                self.__display_board()
-                pygame.display.update()
+                if not self.__board.free_cells():
+                    time.sleep(0.4)
 
-                if game_over:
-                    game_over = False
-                    time.sleep(self.__WAIT_TIME)
+                    if turn == computer:
+                        you_won_message = pygame.image.load("assets/you_won.png")
+                        self.__window.blit(you_won_message, (140, 40))
+                        self.__score += 1
+                    else:
+                        you_lost_message = pygame.image.load("assets/you_lost.png")
+                        self.__window.blit(you_lost_message, (140, 40))
+                        if self.__score > 0:
+                            self.__score -= 1
+
+                    pygame.display.update()
+                    time.sleep(1)
                     self.__board.reset()
                     self.__window.fill((255, 255, 255))
 
-                if turn == computer:
-                    time.sleep(0.2)
+                elif turn == computer:
+                    time.sleep(0.6)
                     random_strategy.move()
                     turn = player
 
-                    if not self.__board.free_cells():
-                        you_lost_message = pygame.image.load("assets/you_lost.png")
-                        self.__window.blit(you_lost_message, (140, 40))
-                        game_over = True
-                        if self.__score > 0:
-                            self.__score -= 1
-                else:
-                    if event.type == MOUSEBUTTONDOWN:
+                elif event.type == MOUSEBUTTONDOWN:
+                    if turn == player:
                         y, x = pygame.mouse.get_pos()
 
                         if self.__click_on_board(x, y):
@@ -94,11 +95,9 @@ class GUI:
                             if self.__board.get_cell_state(row, column) == Cell.Free:
                                 self.__board.set_cell_state(row, column, Cell.X)
                                 turn = computer
-                                if not self.__board.free_cells():
-                                    you_won_message = pygame.image.load("assets/you_won.png")
-                                    self.__window.blit(you_won_message, (140, 40))
-                                    game_over = True
-                                    self.__score += 1
+                self.__display_score()
+                self.__display_board()
+                pygame.display.update()
 
     def multiplayer_mode(self):
         client = Client(5261)
