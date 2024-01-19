@@ -21,7 +21,7 @@ class GUI:
         self.__window = pygame.display.set_mode((600, 600), pygame.RESIZABLE)
         self.__window.fill(self.__BACKGROUND_COLOR)
         self.__score = 0
-        self.__FONT = pygame.font.SysFont("sfcamera", 26)
+        self.__FONT = pygame.font.SysFont("sfcamera", 20)
         self.__TEXT_COLOR = (0, 0, 0)
 
     def __display_board(self):
