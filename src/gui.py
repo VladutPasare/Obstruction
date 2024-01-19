@@ -11,16 +11,17 @@ class GUI:
     __WAIT_TIME = 1.5
     __MY_TURN = 1
     __ENEMY_TURN = 0
-    __WINDOW_CAPTION = "Obstruction"
+    __WINDOW_CAPTION = "OBSTRUCTION"
+    __BACKGROUND_COLOR = (246, 246, 246)
 
     def __init__(self, board: Board):
         self.__board = board
         pygame.init()
         pygame.display.set_caption(self.__WINDOW_CAPTION)
-        self.__window = pygame.display.set_mode((600, 600))
-        self.__window.fill((255, 255, 255))
+        self.__window = pygame.display.set_mode((600, 600), pygame.RESIZABLE)
+        self.__window.fill(self.__BACKGROUND_COLOR)
         self.__score = 0
-        self.__FONT = pygame.font.SysFont("sfcamera", 20)
+        self.__FONT = pygame.font.SysFont("sfcamera", 26)
         self.__TEXT_COLOR = (0, 0, 0)
 
     def __display_board(self):
@@ -46,8 +47,8 @@ class GUI:
         return (y - self.__board.left) // 50
 
     def __display_score(self):
-        pygame.draw.rect(self.__window, (255, 255, 255), (500, 30, 100, 30))
-        text = self.__FONT.render(f'Score: {self.__score}', True, self.__TEXT_COLOR, (255, 255, 255))
+        pygame.draw.rect(self.__window, self.__BACKGROUND_COLOR, (500, 30, 100, 30))
+        text = self.__FONT.render(f'Score: {self.__score}', True, self.__TEXT_COLOR, self.__BACKGROUND_COLOR)
         self.__window.blit(text, (500, 30))
 
     def single_player_mode(self):
@@ -77,7 +78,7 @@ class GUI:
                     pygame.display.update()
                     time.sleep(1)
                     self.__board.reset()
-                    self.__window.fill((255, 255, 255))
+                    self.__window.fill(self.__BACKGROUND_COLOR)
 
                 elif turn == computer:
                     time.sleep(0.6)
@@ -100,7 +101,7 @@ class GUI:
                 pygame.display.update()
 
     def multiplayer_mode(self):
-        client = Client(5261)
+        client = Client(5270)
         turn = client.turn
         game_over = 0
 
@@ -115,7 +116,7 @@ class GUI:
 
                 if game_over:
                     self.__board.reset()
-                    self.__window.fill((255, 255, 255))
+                    self.__window.fill(self.__BACKGROUND_COLOR)
                     time.sleep(self.__WAIT_TIME)
                     game_over = 0
                     continue
