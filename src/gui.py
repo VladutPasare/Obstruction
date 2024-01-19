@@ -81,7 +81,7 @@ class GUI:
                     self.__window.fill(self.__BACKGROUND_COLOR)
 
                 elif turn == computer:
-                    time.sleep(0.6)
+                    time.sleep(1)
                     random_strategy.move()
                     turn = player
 
