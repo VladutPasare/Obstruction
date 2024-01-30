@@ -14,5 +14,5 @@ The application was developed in Python (client side) and C (server side). The p
  ## Video sample
 
  <p align="center">
-  <img src="https://github.com/VladutPasare/Obstruction/blob/main/sample.gif" height="700""/>
+  <img src="https://github.com/VladutPasare/Obstruction/blob/main/sample.gif" height="400""/>
  </p>
