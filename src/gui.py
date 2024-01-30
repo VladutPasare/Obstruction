@@ -4,7 +4,6 @@ from pygame.locals import MOUSEBUTTONDOWN
 
 from board import Board, Cell
 from client import Client
-from strategy import RandomStrategy
 
 
 class GUI:
@@ -18,7 +17,7 @@ class GUI:
         self.__board = board
         pygame.init()
         pygame.display.set_caption(self.__WINDOW_CAPTION)
-        self.__window = pygame.display.set_mode((600, 600), pygame.RESIZABLE)
+        self.__window = pygame.display.set_mode((500, 500), pygame.RESIZABLE)
         self.__window.fill(self.__BACKGROUND_COLOR)
         self.__score = 0
         self.__FONT = pygame.font.SysFont("sfcamera", 20)
@@ -47,12 +46,11 @@ class GUI:
         return (y - self.__board.left) // 50
 
     def __display_score(self):
-        pygame.draw.rect(self.__window, self.__BACKGROUND_COLOR, (500, 30, 100, 30))
+        pygame.draw.rect(self.__window, self.__BACKGROUND_COLOR, (400, 30, 100, 30))
         text = self.__FONT.render(f'Score: {self.__score}', True, self.__TEXT_COLOR, self.__BACKGROUND_COLOR)
-        self.__window.blit(text, (500, 30))
+        self.__window.blit(text, (400, 30))
 
-    def single_player_mode(self):
-        random_strategy = RandomStrategy(self.__board, Cell.O)
+    def single_player_mode(self, strategy):
         computer = 0
         player = 1
         turn = player
@@ -67,11 +65,11 @@ class GUI:
 
                     if turn == computer:
                         you_won_message = pygame.image.load("assets/you_won.png")
-                        self.__window.blit(you_won_message, (140, 40))
+                        self.__window.blit(you_won_message, (90, 40))
                         self.__score += 1
                     else:
                         you_lost_message = pygame.image.load("assets/you_lost.png")
-                        self.__window.blit(you_lost_message, (140, 40))
+                        self.__window.blit(you_lost_message, (90, 40))
                         if self.__score > 0:
                             self.__score -= 1
 
@@ -82,7 +80,7 @@ class GUI:
 
                 elif turn == computer:
                     time.sleep(1)
-                    random_strategy.move()
+                    strategy.move(self.__board)
                     turn = player
 
                 elif event.type == MOUSEBUTTONDOWN:
