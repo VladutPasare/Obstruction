@@ -125,7 +125,7 @@ class GUI:
 
                     if game_over == 1:
                         you_lost_message = pygame.image.load("assets/you_lost.png")
-                        self.__window.blit(you_lost_message, (140, 40))
+                        self.__window.blit(you_lost_message, (90, 40))
                     turn = self.__MY_TURN
                     continue
 
@@ -145,5 +145,5 @@ class GUI:
                                 game_over = 1
                                 client.send(row, column, game_over)
                                 you_won_message = pygame.image.load("assets/you_won.png")
-                                self.__window.blit(you_won_message, (140, 40))
+                                self.__window.blit(you_won_message, (90, 40))
                                 self.__score += 1
