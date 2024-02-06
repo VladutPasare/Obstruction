@@ -4,15 +4,15 @@ Obstruction is a 2D game in which players take turns in marking squares on a gri
 
 The application was developed in Python (client side) and C (server side). The players communicate with the server through a ```TCP``` connection.
 
-## Features
-- ```Human``` versus ```Computer``` mode (the blocks are randomly placed for the computer player)
-- ```Multiplayer``` mode
-- Graphical User Interface built with the ```Pygame``` library
+In the single-player mode, the player can choose between two options for the opponent player (computer): either randomly for a more unpredictable challenge or using a ```Minimax Algorithm``` for a more strategic and competitive gameplay experience.
 
- <Human versus Computer>
+## Features
+- Human versus Computer mode
+- Multiplayer mode
+- Graphical User Interface built with the ```Pygame``` library
 
  ## Video sample
 
  <p align="center">
-  <img src="https://github.com/VladutPasare/Obstruction/blob/main/sample.gif" height="700""/>
+  <img src="https://github.com/VladutPasare/Obstruction/blob/main/sample.gif" height="500""/>
  </p>
