@@ -9,5 +9,5 @@ In the single-player mode, the player can choose between two options for the opp
 
 
  <p align="center">
-  <img src="https://github.com/VladutPasare/Obstruction/blob/main/image.png" height="600""/>
+  <img src="https://github.com/VladutPasare/Obstruction/blob/main/img.png" height="600""/>
  </p>
