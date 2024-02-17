@@ -14,5 +14,5 @@ In the single-player mode, the player can choose between two options for the opp
  ## Video sample
 
  <p align="center">
-  <img src="https://github.com/VladutPasare/Obstruction/blob/main/sample.gif" height="500""/>
+  <img src="https://github.com/VladutPasare/Obstruction/blob/main/image.png" height="600""/>
  </p>
