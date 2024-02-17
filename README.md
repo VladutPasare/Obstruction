@@ -11,7 +11,6 @@ In the single-player mode, the player can choose between two options for the opp
 - Multiplayer mode
 - Graphical User Interface built with the ```Pygame``` library
 
- ## Video sample
 
  <p align="center">
   <img src="https://github.com/VladutPasare/Obstruction/blob/main/image.png" height="600""/>
